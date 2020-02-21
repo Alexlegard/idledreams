@@ -1,0 +1,136 @@
+<!--Image credits:
+
+Apple: http://clipart-library.com/clipart/Lcdooan6i.htm
+Goblin: https://pixabay.com/en/game-asset-call-non-human-beings-1296743/
+Hot dog: clipart-library.com
+Ice cream: clipart-library.com
+Pie: clipart-library.com
+Pizza: clipart-library.com
+Sandwich: clipart-library.com
+Treasure chest: publicdomainvectors.org
+Wizard: clipart-library.com
+Zombie: clipart-library.com
+Amulet: Old School RS wiki
+Chainmail: openclipart.org
+Crown: openclipart.org
+Sword: Minecraft wiki
+Gauntlet: Terraria wiki
+Boots: zelda.gamepedia.com
+Prayer icon: Old School RS wiki
+Sun: clipartlibrary.com
+Flash: clipartlibrary.com
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Idle Dreams</title>
+		<link rel="stylesheet" type="text/css" href="idledreams.css">
+		<link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Overlock+SC" rel="stylesheet">
+		<script type="text/javascript" src="idledreams.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<!--https://www.w3schools.com/howto/howto_css_dropdown.asp-->
+			<div id="top-row" class="top-row">
+				<a href="#">
+					<img id="alex-logo" src="pictures/Alex-logo-lightblue.jpg" alt="A.L.">
+				</a>
+				<div id="dropdown" class="dropdown">
+					<button id="more-games-btn">
+						<label id="more-games-btn-label">More Games</label>
+						<div id="game-menu" class="game-menu">
+							<a href="#">Platformer</a>
+							<a href="#">Adventure</a>
+							<a href="#">Puzzle</a>
+							<a href="#">Idle</a>
+							<a href="#">Tower defense</a>
+							<a href="#">Racing</a>
+							<a href="#">Multiplayer</a>
+						</div>
+					</button>
+				</div>
+			</div>
+			<h1 id="main-header">Play Idle Dreams</h1>
+		</header>
+		<main class="main">
+			
+			<div id="game-container" class="game-container">
+				<!--Chest-area is just a name from when the only monster was the chest...
+				I couldn't be bothered to change it...-->
+				<div id="chest-area" class="chest-area">
+				
+					<div id="btn-area">
+						<button id="theButton" type="button" name="theButton"><span id="theButtonTxt">Attack!</span></button>
+					</div>
+			
+					<img id="monster" src = "pictures/monsters/goblin.png" alt="Goblin" width="250" height="250">
+					
+					<div id="monster-stats">
+						<div id="hp-counter">HP: 10</div>
+						<div id="reward-message">Reward: 10</div>
+						<div id="damage-counter">Damage: 1</div>
+					</div>
+					
+					<div id="level-select">
+						<button id="lv-1" type="button" name="lv1-btn">1</button>
+						<button id="lv-2" type="button" name="lv1-btn">2</button>
+						<button id="lv-3" type="button" name="lv1-btn">3</button>
+						<button id="lv-4" type="button" name="lv1-btn">4</button>
+						<button id="lv-5" type="button" name="lv1-btn">5</button>
+						<button id="lv-6" type="button" name="lv1-btn">6</button>
+						<button id="lv-7" type="button" name="lv1-btn">7</button>
+						<button id="lv-8" type="button" name="lv1-btn">8</button>
+						<button id="lv-9" type="button" name="lv1-btn">9</button>
+						<button id="lv-10" type="button" name="lv1-btn">10</button>
+						<button id="lv-bonus" type="button" name="bonus-lv-btn">Bonus</button>
+					</div>
+				</div>
+				<div id="shop-area" class="shop-area">
+					<ul id="shop">
+					
+					<li><button id="sword-btn" type="button" name="sword-btn">Diamond Sword</button>Cost: 10</li>
+					
+					<li><button id="gauntlets-btn" type="button" name="gauntlets-btn">Flame gauntlets</button>Cost: 20</li>
+					
+					<li><button id="amulet-btn" type="button" name="amulet-btn">Amulet of the Seas</button>Cost: 40</li>
+					
+					<li><button id="leggings-btn" type="button" name="leggings-btn">Leggings of the Hawk</button>Cost: 80<li>
+					
+					<li><button id="chainmail-btn" type="button" name="chainmail-btn">Chainmail of Dexterity</button>Cost: 160</li>
+					
+					<li><button id="helmet-btn" type="button" name="helmet-btn">Helmet of Pride</button>Cost: 320</li>
+					
+					<li><button id="boots-btn" type="button" name="boots-btn">Boots of Speed</button>Cost: 640</li>
+					
+					<li><button id="blessing-btn" type="button" name="blessing-btn">Blessing of Utlimot</button>Cost: 1300</li>
+					
+					<li><button id="prayer-btn" type="button" name="prayer-btn">Jarl's Prayer</button>Cost: 2600</li>
+					
+					<li><button id="mlt-upgrade-btn" type="button" name="mlt-upgrade-btn">Buy 50% Multiplier</button><span id="mlt-cost">Cost: 5000</span></li>
+					
+					</ul>
+					
+					<p id="score-counter">Score: 0</p>
+					
+					<p id="gold-counter">Gold: 0</p>
+					
+					<p id="shop-msg"></p>
+					
+					<div id="lvl-flash">
+						<img id="lvl-flash-img" src="pictures/upgrades/diamond-sword.png" alt="A.L.">
+						<p id="lvl-flash-msg">LEVEL UP!!!</p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer id="footer" class="footer">
+			<p id="instructions">Instructions: Click the button. Buy upgrades. Seriously, that's it...</p>
+			<div id="copyright">&copy; Alex Legard Games, 2019.</p>
+		</footer>
+	</body>
+</html>

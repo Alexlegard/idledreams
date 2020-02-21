@@ -1,0 +1,333 @@
+html {
+	box-sizing:border-box;
+	/*Copied from https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting to disable text highlighting*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Chrome and Opera */
+}
+body {
+	margin:0px;
+}
+*, *::before, *::after {
+	box-sizing:inherit;
+}
+
+/*---------------Header---------------*/
+.header {
+	background:lightblue;
+	height:16vh;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:nowrap;
+	justify-content:center;
+}
+.top-row {
+	width:100%;
+	height:8vh;
+}
+#alex-logo {
+	width:25.6vh;
+	height:16vh;
+}
+#main-header {
+	text-align:center;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-top:2vh;
+	font-family: 'Overlock SC', cursive;
+}
+#more-games-btn {
+	height:8vh;
+	float:right;
+	margin-right:5%;
+	width:100%;
+}
+
+/*https://www.w3schools.com/howto/howto_css_dropdown.asp*/
+.dropdown {
+	position:relative;
+	display:inline-block;
+	float:right;
+	width:25%;
+	height:8vh;
+}
+.game-menu {
+	display:none;
+	position:absolute;
+	z-index:1;
+	box-shadow:0px 10px 10px 0px;
+	min-width:100%;
+	background-color:#f1f1f1;
+}
+.game-menu a {
+	color:black;
+	display:block;
+	text-decoration:none;
+}
+.game-menu a:hover {
+	background-color: #ddd;
+}
+.dropdown:hover .game-menu {
+	display:block;
+}
+
+/*---------------main--------------*/
+.main {
+	min-height:500px;
+	display:flex;
+}
+.game-container {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+	border:1px solid black;
+	width:100%;
+	height:84vh;
+}
+
+/*Monster area*/
+#chest-area {
+	border:2px solid black;
+	width:66.6%;
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+}
+#btn-area {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:center;
+}
+#theButton {
+	width:50%;
+	height:100px;
+	margin:1%;
+	border-radius:50%;
+	background-color:yellow;
+	border:1px solid black;
+}
+/*https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome*/
+#theButton:focus {
+	outline:0;
+}
+#theButton:active #theButtonTxt {
+	color:black;
+}
+#theButtonTxt {
+	/*Using font: https://fonts.google.com/specimen/Slackey?selection.family=Slackey*/
+	font-family: 'Slackey', cursive;
+	font-size:36pt;
+	color:darkred;
+}
+#monster {
+	display:block;
+	margin:auto;
+	animation-name:jiggle;
+	animation-duration:0.25s;
+	position:relative;
+	animation-play-state:paused;
+}
+#hp-counter, #reward-message, #damage-counter {
+	font-weight:bold;
+	text-align:center;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+#level-select {
+	text-align:center;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:center;
+	margin-bottom:30px;
+}
+#level-select button {
+	margin-left:1px;
+	margin-right:1px;
+}
+#lv-1, #lv-2, #lv-3, #lv-4, #lv-5, #lv-6, #lv-7, #lv-8, #lv-9, #lv-10 {
+	width:30px;
+	height:35px;
+	border-radius:10%;
+	border:1px solid grey;
+}	
+#lv-bonus {
+	width:60px;
+	height:35px;
+}
+#lv-2, #lv-3, #lv-4, #lv-5, #lv-6, #lv-7, #lv-8, #lv-9, #lv-10, #lv-bonus {
+	display:none;
+}
+
+/*Shop area*/
+ul {
+	list-style-type:none;
+}
+
+#shop-area {
+	border:2px solid black;
+	width:33.4%;
+	height:100%;
+	padding:10px;
+}
+
+#score-counter, #gold-counter {
+	text-align:center;
+	font-weight:bold;
+}
+
+/*Upgrade flash animation*/
+
+#lvl-flash {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	animation-name:flash-lvl-up;
+	animation-duration:3s;
+	position:relative;
+	animation-play-state:paused;
+	width:100%;
+	height:50px;
+}
+#lvl-flash-img {
+	width:50px;
+	height:50px;
+	display:inline-block;
+	float:left;
+}
+#lvl-flash-msg {
+	color:red;
+	font-size:24pt;
+	display:inline-block;
+	float:left;
+	margin-top:0%;
+	margin-left:1%;
+}
+
+#sword-btn, #gauntlets-btn, #amulet-btn, #leggings-btn, #chainmail-btn, #helmet-btn, #boots-btn, #blessing-btn, #prayer-btn, #mlt-upgrade-btn {
+	width:250px;
+	height:33px;
+	animation-name:green-fade-in;
+	animation-duration:1s;
+	position:relative;
+	animation-iteration-count:1;
+	animation-play-state:paused;
+	animation-fill-mode:forwards;
+}
+
+/*----------------Footer--------------*/
+.footer {
+	display:block;
+}
+
+#instructions {
+	border:2px solid black;
+	margin:0px;
+	height:10vh;
+	padding-top:3vh;
+	text-align:center;
+	font-weight:bold;
+}
+
+#copyright {
+	background-color:black;
+	color:white;
+	text-align:center;
+	font-weight:bold;
+	height:8vh;
+	padding-top:2.5vh;
+}
+
+/*Animations:*/
+
+/*Clicking the button: The monster jiggles a bit.*/
+@keyframes jiggle {
+	0% {
+		transform:scale(1);
+	}
+	50% {
+		transform:scale(1.5, 0.5);
+	}
+	100% {
+		transform:scale(1);
+	}
+}
+
+/*Upgrade buttons slowly turn to green on purchase*/
+@keyframes green-fade-in {
+	from { background-color:lightgrey; }
+	to { background-color:lightgreen; }
+}
+
+@keyframes flash-lvl-up {
+	0%  { opacity: 0.0; }
+	9%  { opacity: 1.0; }
+	10% { opacity: 0.0; }
+	19% { opacity: 1.0; }
+	20% { opacity: 0.0; }
+	29% { opacity: 1.0; }
+	30% { opacity: 0.0; }
+	39% { opacity: 1.0; }
+	40% { opacity: 0.0; }
+	49% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	59% { opacity: 1.0; }
+	60% { opacity: 0.0; }
+	69% { opacity: 1.0; }
+	70% { opacity: 0.0; }
+	79% { opacity: 1.0; }
+	80% { opacity: 0.0; }
+	89% { opacity: 1.0; }
+	90% { opacity: 0.0; }
+	99% { opacity: 1.0; }
+	100%{ opacity: 0.0; }
+}
+
+@media only screen and (max-width:1000px) {
+	#sword-btn, #gauntlets-btn, #amulet-btn, #leggings-btn, #chainmail-btn, #helmet-btn, #boots-btn, #blessing-btn, #prayer-btn, #mlt-upgrade-btn {
+		width:100px;
+		
+	}
+	#shop-area {
+		padding:2px;
+	}
+	#shop-area ul {
+		padding-left:0px;
+	}
+}
+
+@media only screen and (max-width:750px) {
+	#theButtonTxt {
+		font-size:24pt;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	/*gamecontainer is a flexbox containing chest-area and shop-area.
+	switch chestarea to flex-basis:100% and shoparea to flex-basis:100%
+	and switch gamecontainer to flex-wrap:wrap.*/
+	
+	.game-container {
+		flex-wrap:wrap;
+	}
+	.chest-area {
+		flex-basis:100%;
+		width:100%;
+	}
+	.shop-area {
+		flex-basis:100%;
+		width:100%;
+	}
+	#main-header {
+		text-align:right;
+		/*font-size:14pt;*/
+	}
+}
